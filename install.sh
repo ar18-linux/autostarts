@@ -13,7 +13,6 @@ script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 . "${script_dir}/vars"
 
 rm -rf "${install_dir}/${module_name}"
-exit
 cp -rf "${script_dir}/${module_name}" "${install_dir}/${module_name}"
 chmod +x "${install_dir}/${module_name}/"* -R
 echo setting writes
