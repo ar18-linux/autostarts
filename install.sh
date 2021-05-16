@@ -16,7 +16,7 @@ rm -rf "${install_dir}/${module_name}"
 cp -rf "${script_dir}/${module_name}" "${install_dir}/${module_name}"
 chmod +x "${install_dir}/${module_name}/"* -R
 echo setting writes
-chmod +w "${install_dir}/${module_name}"
+chmod a+w "${install_dir}/${module_name}"
 
 code="${install_dir}/${module_name}/${module_name}.sh"
 set +e
