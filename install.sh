@@ -14,7 +14,7 @@ script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 code='for the_file in "~/.config/ar18/autostarts/"*; do "${the_file}"; done'
 content="$(cat "/home/${user_name}/.xprofile" | grep "${code}")"
-if [ "${content}" = "" ]; then
+if [[ "${content}" == "" ]]; then
   echo "${code}" >> "/home/${user_name}/.xprofile"
 fi
 
