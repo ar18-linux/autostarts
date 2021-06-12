@@ -1,7 +1,7 @@
 #!/bin/bash
 # ar18
 
-# Script template version 2021-06-12.03
+# Script template version 2021-06-13
 # Make sure some modification to LD_PRELOAD will not alter the result or outcome in any way
 LD_PRELOAD_old="${LD_PRELOAD}"
 LD_PRELOAD=
@@ -49,7 +49,6 @@ if [ "${content}" = "" ]; then
 fi
 
 mkdir -p "/home/${user_name}/.config/ar18/autostarts"
-
 ##################################SCRIPT_END###################################
 # Restore old shell values
 set +x
