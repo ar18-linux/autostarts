@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script template version 2021-06-12.01
+# Script template version 2021-06-12.02
 # Make sure some modification to LD_PRELOAD will not alter the result or outcome in any way
 LD_PRELOAD_old="${LD_PRELOAD}"
 LD_PRELOAD=
@@ -8,9 +8,9 @@ LD_PRELOAD=
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 script_path="${script_dir}/$(basename "${0}")"
 #Set PS4 for easier debugging
-export PS4='$(basename "${0}"):${LINENO}: '
+export PS4='\e[35m${BASH_SOURCE[0]}:${LINENO}: \e[39m'
 # Determine if this script was sourced or is the parent script
-if [ -z "${ar18_sourced_map+x}" ]; then
+if [ ! -v ar18_sourced_map ]; then
   declare -A -g ar18_sourced_map
 fi
 if [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then
@@ -50,6 +50,7 @@ mkdir -p "/home/${user_name}/.config/ar18/autostarts"
 
 # End of script
 # Restore old shell values
+set +x
 for option in "${shell_options[@]}"; do
   eval "${option}"
 done
